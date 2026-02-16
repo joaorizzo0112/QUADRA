@@ -25,8 +25,8 @@ O jogo implementa não apenas a lógica básica de colisão e pontuação, mas t
 * **Seta Cima:** Girar peça
 * **Seta Baixo:** Descer rápido (Soft Drop)
 * **Espaço:** Queda instantânea (Hard Drop)
-* **C** Armazenar ou alternar a peça em reserva estratégica (Hold)
-* **P** Pausar ou retomar o estado de execução da partida
+* **C :** Armazenar ou alternar a peça em reserva estratégica (Hold)
+* **P :** Pausar ou retomar o estado de execução da partida
 
 ## Tecnologias e Arquitetura
 
@@ -44,3 +44,4 @@ Certifique-se de ter o [Java JDK](https://www.oracle.com/java/technologies/downl
 1. Clone este repositório:
    ```bash
    git clone [https://github.com/SEU-USUARIO/Quadra.git](https://github.com/SEU-USUARIO/Quadra.git)
+
