@@ -4,7 +4,8 @@ Um clone moderno e responsivo do clássico Tetris, desenvolvido inteiramente em 
 
 Este projeto foi construído para aplicar conceitos sólidos de Programação Orientada a Objetos (POO), manipulação de interfaces gráficas nativas, renderização dinâmica e laços de repetição para jogos (Game Loop).
 
-![Status](https://img.shields.io/badge/Status-Concluído-success)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Concluído-brightgreen?style=for-the-badge)
 
 > **Nota:** <img width="959" height="539" alt="image" src="https://github.com/user-attachments/assets/7e28fd17-5f15-41b6-b1f5-29de886ab7db" />
 
@@ -44,4 +45,5 @@ Certifique-se de ter o [Java JDK](https://www.oracle.com/java/technologies/downl
 1. Clone este repositório:
    ```bash
    git clone [https://github.com/SEU-USUARIO/Quadra.git](https://github.com/SEU-USUARIO/Quadra.git)
+
 
