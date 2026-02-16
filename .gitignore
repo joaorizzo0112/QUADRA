@@ -1,0 +1,14 @@
+# --- Java (Arquivos compilados) ---
+*.class
+bin/
+out/
+
+# --- VS Code (Configurações) ---
+.vscode/
+.settings/
+*.classpath
+*.project
+
+# --- Executáveis ---
+*.jar
+*.exe
