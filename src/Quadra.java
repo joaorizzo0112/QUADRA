@@ -194,7 +194,7 @@ public class Quadra extends JPanel implements ActionListener {
 
     public Quadra() {
         setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
-        setBackground(new Color(15, 15, 20));
+        setBackground(Color.BLACK);
         setFocusable(true);
         addKeyListener(new TAdapter());
         
@@ -412,6 +412,11 @@ public class Quadra extends JPanel implements ActionListener {
         }
     }
 
+    private void updateParticles() {
+        Iterator<Particle> it = particles.iterator();
+        while(it.hasNext()) { if(!it.next().update()) it.remove(); }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         rainbowHue += 0.01f;
@@ -427,16 +432,21 @@ public class Quadra extends JPanel implements ActionListener {
         repaint();
     }
 
-    private void updateParticles() {
-        Iterator<Particle> it = particles.iterator();
-        while(it.hasNext()) { if(!it.next().update()) it.remove(); }
-    }
-
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        double scale = Math.min((double) getWidth() / PANEL_WIDTH, (double) getHeight() / PANEL_HEIGHT);
+        double xOffset = (getWidth() - (PANEL_WIDTH * scale)) / 2.0;
+        double yOffset = (getHeight() - (PANEL_HEIGHT * scale)) / 2.0;
+
+        g2.translate(xOffset, yOffset);
+        g2.scale(scale, scale);
+
+        g2.setColor(new Color(15, 15, 20));
+        g2.fillRect(0, 0, PANEL_WIDTH, PANEL_HEIGHT);
 
         if (currentState == State.MENU) drawMenu(g2);
         else if (currentState == State.INSTRUCTIONS) drawInstructions(g2);
@@ -675,7 +685,10 @@ public class Quadra extends JPanel implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new Quadra());
         frame.pack();
+        
+        frame.setMinimumSize(new Dimension(400, 400));
         frame.setLocationRelativeTo(null);
+        
         frame.setVisible(true);
     }
 }
